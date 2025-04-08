@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-//import java.util.Map;
 
 public class Solver {
     private final int length;
-    private HashMap<Character, ArrayList<Integer>> green, yellow;
-    private HashMap<Character, Integer> confirmedLetterCounts; //for double letter word guesses (each one will confirm a letter count for the duplicated letter), a superset of gray
+    private HashMap<Character, ArrayList<Integer>> confirmedPositions, excludedPositions;
+    private HashMap<Character, Integer> minimumCount, confirmedCount; //for double letter word guesses (each one will confirm a letter count for the duplicated letter), a superset of gray
     private ArrayList<String> wordBuffer;
 
     // if continuing on with this system (which is flawed), we will have to store positions of grays so if for example there is: e (green) h (green) e (yellow) j (gray) e (gray), the system knows to eliminate any word with 'e' at the last letter (in this case, e must be at where j is and there must be two e's)
@@ -19,8 +18,10 @@ public class Solver {
 
     public Solver(int length) {
         this.length = length;
-        green = new HashMap<>();
-        yellow = new HashMap<>();
+        confirmedPositions = new HashMap<>();
+        excludedPositions = new HashMap<>();
+        minimumCount = new HashMap<>();
+        confirmedCount = new HashMap<>();
         wordBuffer = new ArrayList<>(10000);
     }
 
@@ -89,7 +90,7 @@ public class Solver {
                 }
             }*/
 
-            currentWord =
+//            currentWord =
 
             for (int j = 0; j < )
 
